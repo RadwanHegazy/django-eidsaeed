@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubark</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+
+    {% for msg in messages %}
+        <script>alert("{{msg}}")</script>
+    {% endfor %}
+    
+    <img src="{% static 'bg.png' %}" alt="" class="bg">
+
+    <form class="container" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1>Eid Mubarak</h1>
+        <div class="img">
+            <input name="img" type="file" accept="images/*" id="imgFile" hidden>
+            <img id="imgView" src="{% static 'user.png' %}" width="100px" height="100px" alt="">
+            <button id="uploadImg" type="button">upload img</button>
+        </div>
+        <input name="username" type="text" required placeholder="Enter your name">
+        <select name="template" required id="">
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+            <option value="purple">purple</option>
+        </select>
+        <button class="gen" type="submit">Generate</button>
+    </form>
+
+    <script>
+
+        var imgView = document.getElementById('imgView');
+        var uploadImg = document.getElementById('uploadImg');
+        var imgFile = document.getElementById('imgFile');
+
+        uploadImg.addEventListener('click',()=>{
+            imgFile.click()
+        })
+
+        imgFile.addEventListener('change',(e)=>{
+            imgView.src = URL.createObjectURL(e.target.files[0]);
+        })
+
+    </script>
+
+</body>
+</html>

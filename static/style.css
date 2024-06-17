@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+:root{
+    --var-font:"Baloo Tamma 2", system-ui;
+}
+
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img.bg {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+}
+
+
+.container{
+    width: 450px;
+    padding: 2rem;
+    border-radius: 40px;
+    background-color: #ffffff15;
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+.container h1 {
+    font-family: var(--var-font);
+    background-color: #002233;
+    color:#0066FF ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
+}
+
+
+.container .img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container .img img {
+    background-color: #ffffff15;
+    padding: 6px 12px;
+    object-fit: contain;
+    border-radius: 12px;
+}
+
+.container .img button {
+    font-family: var(--var-font);
+    font-weight: bold;
+    color: #fff;
+    padding: 6px 12px;
+    border: none;
+    outline: none;
+    background-color: #0066FF;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.container input, select {
+    height: 45px;
+    border: none;
+    outline: none;
+    font-family: var(--var-font);
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #00000030;
+    color: #ccc;
+}
+
+.container input::placeholder {
+    color: #ccc;
+}
+
+.container select option{
+    background-color: #000;
+}
+
+.container .gen {
+    height: 55px;
+    border-radius: 17px;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: var(--var-font);
+    background-color: #11D465;
+    font-size: 17px;
+    cursor: pointer;
+}
